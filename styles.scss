@@ -1,0 +1,55 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+$hand-length:49%;
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(30,87,153,1) 35%,rgba(125,185,232,1) 100%);
+    @include flex-center;
+}
+
+.clock-face {
+    width: 20vw;
+    height: 20vw;
+    border: 0.7rem solid white;
+    border-radius: 50%;
+    position: relative;
+
+    .hand {
+        position: absolute;
+        border: 0.4rem solid black;
+        border-radius: 5px;
+        width: $hand-length;
+        top: 50%;
+        right: 50%;
+        transform-origin: 100%;
+        transition: all 0.1s cubic-bezier(0.400, 1.650, 0.750, 0.095);
+        transform: rotate(90deg);
+    }
+    
+    .hours {
+        width: $hand-length/1.5;
+    }
+
+    .mins {
+        border: 0.4rem solid black;
+    }
+
+    .sec {
+        border: 0.2rem solid black;
+    }
+}
+
+
+
